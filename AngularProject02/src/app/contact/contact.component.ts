@@ -11,5 +11,6 @@ export class ContactComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  number='999999887777'
 
 }

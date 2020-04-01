@@ -1,0 +1,70 @@
+
+<div class="row">
+ <div class="col-md-400">
+
+        <div class="card" style="width: 18rem;">
+                       <img src="https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lowres/c05962448.png" class="card-img-top" alt="DELL">
+            <div class="card-body">
+              <h5 class="card-title">Laptop</h5>
+              <p class="card-text">HP 15s-du0050tu (6YE06PA) Laptop (Core i3 7th Gen/4 GB/1 TB 256 GB SSD/Windows 10)
+                ₹39,800.00 INR*
+                n ng</p>
+                <button class="btn btn-info"  (click)="onSelect('Laptop')">AddToCart</button>
+            </div>
+         </div>
+ 
+ 
+    <div class="card" style="width: 18rem;">
+        <img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1484816921.64484437.jpg" class="card-img-top" alt="Redmi">
+        <div class="card-body">
+          <h5 class="card-title">Mobile</h5>
+          <p class="card-text">
+            
+              Mi.com
+              Xiaomi Redmi Note 4 Price and Features - Mi India
+           </p>
+           <button class="btn btn-info"  (click)="onSelect('Mobile')">AddToCart</button>
+        </div>
+      </div>
+
+
+
+ 
+    <div class="card" style="width: 18rem;">
+        <img src="https://images.samsung.com/is/image/samsung/pk_LA52A650A1RXZN_001_Front?$L2-Thumbnail$" class="card-img-top" alt="samsong">
+        <div class="card-body">
+          <h5 class="card-title">Television</h5>
+          <p class="card-text">52" LCD TV A650 Series 4</p>
+                   
+          <button class="btn btn-info"  (click)="onSelect('Television')">AddToCart</button>
+        </div>
+      </div>
+  
+
+    <div class="card" style="width: 18rem;">
+    <img src="https://i.ytimg.com/vi/DHGictE9lBw/hqdefault.jpg" class="card-img-top" alt="BOOM">
+    
+    
+    <div class="card-body">
+      <h5 class="card-title">SoundSystem</h5>
+      <p class="card-text"> Dub-Stuy | A Brooklyn based Sound System Collective</p>
+      <button class="btn btn-info"  (click)="onSelect('SoundSystem')">AddToCart</button>
+    </div>
+  </div> 
+
+ 
+
+</div> 
+ <div class="col-md-12 text-center bg-success text-white py-4 ">
+    <h2 *ngIf="!Selected">please select</h2>
+    <h2 *ngIf="Selected">{{selectedProduct}}</h2>
+    <button class="btn btn-info">GoToCart</button>
+    </div>         
+    
+</div> 
+
+
+
+           
+       
+ 

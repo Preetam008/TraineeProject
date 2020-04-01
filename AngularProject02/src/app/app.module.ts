@@ -13,18 +13,27 @@ import { TelVsonComponent } from './products/tel-vson/tel-vson.component';
 import { SoundSystemComponent } from './products/sound-system/sound-system.component';
 import { MobileComponent } from './products/mobile/mobile.component';
 import { LaptopComponent } from './products/laptop/laptop.component';
+import { CommonComponentComponent } from './common-component/common-component.component';
+import { ParentComponent } from './parent/parent.component';
+import { Cart1Component } from './cart1/cart1.component';
+
+import { AppServiceService } from './app-service.service';
+
 
 const appRoutes:Routes=[
+{path:'buy',     component:ParentComponent},
 {path:'Home',    component:HomeComponent},
 {path:'Contact', component:ContactComponent},
 {path:'About',   component:AboutComponent},
-{path:'Product',  children:[
-  {path:'',component:TelVsonComponent},
-  {path:'TV',component:TelVsonComponent},
-  {path:'SS',component:SoundSystemComponent},
+
+{path:'Product', children:[
+  {path:'',component:ProductsComponent},
+  {path:'LAP',component:LaptopComponent},
   {path:'MOB',component:MobileComponent},
-  {path:'LAP',component:LaptopComponent}
+  {path:'TV',component:TelVsonComponent},
+  {path:'SS',component:SoundSystemComponent}
 ]}
+
 ]
 
 @NgModule({
@@ -33,14 +42,21 @@ const appRoutes:Routes=[
     HomeComponent,
     ContactComponent,
     AboutComponent,
-    ProductsComponent
+    ProductsComponent,
+    CommonComponentComponent,
+    ParentComponent,
+    Cart1Component,
+    
+    
+    
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [AppServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
