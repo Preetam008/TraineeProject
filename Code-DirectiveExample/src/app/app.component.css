@@ -1,0 +1,21 @@
+.text-success {
+color: green;
+}
+.text-danger {
+    color: red;
+}
+.text-primary {
+    color: blue;
+}
+.one {
+    color: green;
+    }
+.two {
+        font-size: 20px;
+    }
+    .three {
+        color: red;
+    }
+    .four {
+        font-size: 25px;
+    }

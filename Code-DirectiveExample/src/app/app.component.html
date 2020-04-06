@@ -1,0 +1,325 @@
+<!-- <h3>ngFor with html tag</h3>
+<span *ngFor="let data of personData">
+  Name : {{data.name}} | Mobile No : {{data.MobileNo}} <br/>
+</span>
+
+<h3>ngFor with ng-template</h3>
+<ng-template ngFor let-data [ngForOf]="personData" >
+  Person Name : {{data.name}} | Mobile No : {{data.MobileNo}} <br/>
+</ng-template> -->
+
+
+<!-- <h3>ngFor with index,even,odd</h3>
+<span *ngFor="let data of personData; index as i; even as isEven; odd as isOdd">
+ <font color="red" *ngIf="isEven" > SrNo : {{i}} -  Name : {{data.name}} | Mobile No : {{data.MobileNo}} </font> <br/>
+ <font color="blue" *ngIf="isOdd" > SrNo : {{i}} - Name : {{data.name}} | Mobile No : {{data.MobileNo}} </font><br/>
+</span> -->
+
+<!-- 
+<h3>ngFor with index,even,odd using ng-template</h3>
+<ng-template ngFor let-data [ngForOf]="personData"  let-i="index"; let-isEven="even"; let-isOdd="odd">
+  <font color="red" *ngIf="isEven" > SrNo : {{i}} -  Name : {{data.name}} | Mobile No : {{data.MobileNo}} </font> <br/>
+  <font color="blue" *ngIf="isOdd" > SrNo : {{i}} - Name : {{data.name}} | Mobile No : {{data.MobileNo}} </font><br/>
+</ng-template> -->
+
+<!-- 
+<h3>ngFor with index,first,last using html tag</h3>
+<div *ngFor="let data of personData; index as i; first as isFirst; last as isLast">
+  <font color="red" *ngIf="isFirst; else elseBlock" > SrNo : {{i}} -  Name : {{data.name}} | Mobile No : {{data.MobileNo}} </font> 
+<ng-template #elseBlock>
+  <font color="blue" *ngIf="isLast; else elseBlock2" > SrNo : {{i}} - Name : {{data.name}} | Mobile No : {{data.MobileNo}} </font>
+</ng-template>
+<ng-template #elseBlock2>
+  <font color="green"> SrNo : {{i}} - Name : {{data.name}} | Mobile No : {{data.MobileNo}} </font>
+</ng-template>
+ </div>
+
+
+
+ <h3>ngFor with index,first,last using ng-template</h3>
+ <ng-template ngFor let-data [ngForOf]="personData"  let-i="index"; let-isFirst="first"; let-isLast="last">
+  <font color="red" *ngIf="isFirst; else elseBlock" > SrNo : {{i}} -  Name : {{data.name}} | Mobile No : {{data.MobileNo}} </font> <br/>
+
+<ng-template #elseBlock>
+  <font color="blue" *ngIf="isLast; else elseBlock2" > SrNo : {{i}} - Name : {{data.name}} | Mobile No : {{data.MobileNo}} </font>
+</ng-template>
+  
+<ng-template #elseBlock2>
+  <font color="green"> SrNo : {{i}} - Name : {{data.name}} | Mobile No : {{data.MobileNo}} </font><br/>
+</ng-template>
+ </ng-template> -->
+<!-- 
+ <h3>ng Swtich Using HTML Tag</h3>
+ <div [ngSwitch]="person">
+ <div *ngSwitchCase="'ak'" >Hello ak</div>
+ <div *ngSwitchCase="'bk'" >Hello bk</div>
+ <div *ngSwitchCase="'ck'" >Hello ck</div>
+ <div *ngSwitchCase="'dk'" >Hello dk</div>
+ <div *ngSwitchDefault>No Match</div>
+ </div>
+
+
+ Input : <input type="text" #num (keyup)="0">
+ <div [ngSwitch]="num.value">
+  <div *ngSwitchCase="'1'" >Hello 1</div>
+  <div *ngSwitchCase="'2'" >Hello 2</div>
+  <div *ngSwitchCase="'3'" >Hello 3</div>
+  <div *ngSwitchCase="'4'" >Hello 4</div>
+  <div *ngSwitchDefault>No Match</div>
+  </div>
+  -->
+
+
+<!-- <h3>ngFor with html tag</h3>
+  <div *ngFor="let data of personData">
+    Name : {{data.name}} | Mobile No : {{data.MobileNo}} 
+  </div> -->
+
+<!-- <h3>ngFor with html tag using trackBy</h3> -->
+<!-- <div *ngFor="let data of personData;index as i; trackBy: fntrackBy">
+    Name : {{data.name}} | Mobile No : {{data.MobileNo}} 
+  </div> -->
+<!-- 
+  <h3>ngFor with ng-template using trackBy</h3>
+  <ng-template ngFor let-data [ngForOf]="personData" let-i="index"; [ngForTrackBy]="fntrackBy"  >
+    Person Name : {{data.name}} | Mobile No : {{data.MobileNo}}  <br/>
+  </ng-template> 
+
+
+<button (click)="Addmore()" >Submit</button> -->
+<!-- 
+
+<h3>NgIf example</h3>
+
+Enter Age : <input type="text" #age (keyup)="0">
+
+<div>
+<button (click)="changeThenBlock()" >Change then Block</button>
+<button (click)="changeElseBlock()" >Change else Block</button>
+</div>
+
+<div *ngIf="age.value >17 then myThenBlock else myElseBlock">
+
+</div>
+
+<ng-template #firstThenBlock>
+  I am Eligiable for Vote (firstThenBlock)
+</ng-template>
+
+<ng-template #secondThenBlock>
+  I am Eligiable for Vote (secondThenBlock)
+</ng-template>
+
+<ng-template #firstElseBlock>
+  I am not Eligiable for Vote (firstElseBlock)
+</ng-template>
+
+<ng-template #secondElseBlock>
+  I am not Eligiable for Vote (secondElseBlock)
+</ng-template> -->
+<!-- 
+<h3>ngIf Using async pipe</h3>
+
+<div *ngIf="message | async as msg ; else elseBlock ">
+{{msg}}
+</div>
+<ng-template #elseBlock>
+loading...
+</ng-template>
+
+<h3>ngFor with html tag</h3>
+<div *ngFor="let data of persons | async as mypersons">
+  Name : {{data.name}} | Mobile No : {{data.MobileNo}} 
+</div>
+
+<h3>ngFor with ng-template</h3>
+<ng-template ngFor let-data [ngForOf]="persons | async" let-mypersons="ngForOf" >
+  Person Name : {{data.name}} | Mobile No : {{data.MobileNo}} <br/>
+</ng-template> -->
+
+
+<!-- <h3>ngSwitch using enum</h3>
+
+<div>
+  {{dirEnum.East}} <br/>
+  {{dirEnum.West}} <br/>
+</div>
+
+
+<div [ngSwitch]="dirEnum.South">
+  <div *ngSwitchCase="dirEnum.East" >East</div>
+  <div *ngSwitchCase="dirEnum.West" >West</div>
+  <div *ngSwitchCase="dirEnum.North" >North</div>
+  <div *ngSwitchCase="dirEnum.South" >South</div>
+  <div *ngSwitchDefault>No Match</div>
+  </div> -->
+
+
+<!-- <div [ngSwitch]="dirEnum.South">
+  <div *ngSwitchCase="dirEnum.East">East</div>
+  <div *ngSwitchCase="dirEnum.West">West</div>
+  <div *ngSwitchCase="dirEnum.North">North</div>
+  <div *ngSwitchCase="dirEnum.South">South</div>
+  <div *ngSwitchDefault>No Match</div>
+</div> -->
+
+<!-- <div *ngFor="let data of ids">
+  Id : {{data}}
+
+  <div [ngSwitch]="{{data % 2}}">
+    <div *ngSwitchCase="'0'" [ngClass]="'even'">I am Evem</div>
+    <div *ngSwitchCase="'1'" [ngClass]="'odd'">I am Odd</div>
+    <div *ngSwitchDefault>No Match</div>
+  </div>
+
+</div> -->
+<!-- 
+<h3>ngStyle Example</h3>
+
+<div [ngStyle]="{'background-color':'Red'}">Hello Muraai</div>
+
+<div [ngStyle]="{'background-color': companyType=='software' ? 'green' : 'Red'}">Hello Muraai</div>
+
+<div [ngStyle]="{'background-color': companyType==='1' ? 'green' : 'Red'}">Hello Muraai</div>
+
+<h3>ngStyple using ngFor</h3>
+
+<div *ngFor="let data of personData">
+  <div [ngStyle]="{'color': myCountry==data.country ? 'green' : 'Red'}">
+    Name : {{data.name}} | country : {{data.country}}
+  </div>
+</div>
+
+<h3>ngStyple using ngFor and switch case</h3>
+<div *ngFor="let data of personData">
+  <div [ngStyle]="{'color': getColor(data.country)}">
+    Name : {{data.name}} | country : {{data.country}}
+  </div>
+</div>
+
+<h3>Alternate Example</h3>
+
+<div *ngFor="let data of personData">
+  <div [style.color]="getColor(data.country)">
+    Name : {{data.name}} | country : {{data.country}}
+  </div>
+</div>
+
+<h3>Multiple Style Property</h3>
+<div *ngFor="let data of personData">
+  <div [style.color]="getColor(data.country)" [style.font-size.px]="24">
+    Name : {{data.name}} | country : {{data.country}}
+  </div>
+</div>
+
+<h3> Style Property and ngStyle</h3>
+<div *ngFor="let data of personData">
+  <div [style.color]="getColor(data.country)" [ngStyle]="{'font-size.px':'24'}">
+    Name : {{data.name}} | country : {{data.country}}
+  </div>
+</div>
+
+
+<h3>Multiple times ngStyle</h3>
+<div *ngFor="let data of personData">
+  <div [ngStyle]="{'font-size.px':'24'}" [ngStyle]="{'color': getColor(data.country)}">
+    Name : {{data.name}} | country : {{data.country}}
+  </div>
+</div>
+
+<h3>Multiple ngStyle</h3>
+<div *ngFor="let data of personData">
+    <div  [ngStyle]="{'color': getColor(data.country) , 'font-size.px':'24'}">
+      Name : {{data.name}} | country : {{data.country}}
+    </div>
+  </div> -->
+
+
+<h3>ngClass with string Example</h3>
+
+<div [ngClass]="'one'">
+  ngClass with string
+</div>
+
+<div [ngClass]="'one two'">
+  ngClass with string
+</div>
+
+<div *ngFor="let data of personData">
+  <div [ngClass]="'one two'">
+    Name : {{data.name}} | country : {{data.country}}
+  </div>
+</div>
+
+
+<div [ngClass]="myClass">
+  ngClass with string
+</div>
+
+
+<h3>ngClass with Array Example</h3>
+<div [ngClass]="['one']">
+  ngClass with Array
+</div>
+
+<div [ngClass]="['one' , 'two']">
+  ngClass with Array
+</div>
+
+<div [ngClass]="myClassArr">
+  ngClass with string
+</div>
+
+<div *ngFor="let data of personData">
+  <div [ngClass]="['one', 'two']">
+    Name : {{data.name}} | country : {{data.country}}
+  </div>
+</div>
+
+<h3>ngClass with Object Example</h3>
+<div [ngClass]="{'one' : true}">
+  ngClass with Object
+</div>
+
+<div [ngClass]="{'one' : false}">
+  ngClass with Object
+</div>
+
+
+<div [ngClass]="{'one' : myclassType=='online'}">
+  ngClass with Object
+</div>
+
+<div [ngClass]="{'one' : myclassType=='offLine'}">
+  ngClass with Object
+</div>
+
+
+<div [ngClass]="{'one' : true , 'two': true}">
+  ngClass with Object
+</div>
+
+<div [ngClass]="{'one' : true , 'two': false}">
+  ngClass with Object
+</div>
+
+<h3>Multiple ngClass condition</h3>
+
+<div [ngClass]="{'one' : myclassType=='online',
+'two' : myclassType=='online',
+'three' : myclassType=='offLine',
+'four' : myclassType=='offLine'
+}">
+  ngClass with Object
+</div>
+
+<h3>Multiple ngClass condition ex</h3>
+<div *ngFor="let data of personData">
+  <div [ngClass]="{'one' : data.country=='India',
+'two' : data.country=='India',
+'three' : data.country!='India',
+'four' : data.country!='India'
+}">
+    Name : {{data.name}} | country : {{data.country}}
+  </div>
+</div>

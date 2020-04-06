@@ -10,6 +10,7 @@ export class AppComponent {
  name:string ="preetam";
  isVisible:boolean=true
  visiblity(){
+   debugger;
    this.isVisible =false;
  }
  user={

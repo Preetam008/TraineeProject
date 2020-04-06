@@ -1,0 +1,36 @@
+<div style="text-align: center;">
+  <h2>Registration Form</h2> 
+
+ <form #userForm="ngForm" (ngSubmit)="onSubmit()"novalidate>
+   {{userForm.value | json}}
+   <div>
+   {{userModel | json}}</div>
+   <div class="form-group">
+     <label>Name</label>
+     <input type="text" class="Form-control" required [class.is-invalid]="name.invalid && name.touched" name="userName" [(ngModel)]="userModel.name">
+     <small [class.d-none]="name.valid || name.untouched">Please Enter Name</small>
+    </div>
+
+   <div class="form-group">
+    <label>Email</label>
+    <input type="email"  #name="ngModel"  required required [class.is-invalid]="name.invalid && name.touched" class="Form-control"  name="Gmail" [(ngModel)]="userModel.email">
+    <small [class.d-none]="name.valid || name.untouched">Please Gmail</small>
+  </div>
+   {{name.untouched}}
+
+   <div class="form-group">
+    <label>PhoneNumber</label>
+    <input type="tel" required [class.is-invalid]="name.invalid && name.touched" class="Form-control" name="PhNo" [(ngModel)]="userModel.phoneNumber">
+    <small [class.d-none]="name.valid || name.untouched">Please Enter number</small>
+  </div>
+
+   <div class="form-group">
+    <select class="custom-select" (blur)="validateTopic(topic.value)" (change)="validateTopic(topic.value)" required #topic ="ngModel" [class.is-invalid]="topicError&& topic.touched"     name="subject"[(ngModel)]="userModel.topic">
+      <option value="">Select Course</option>
+      <option *ngFor ="let topic Of topics">{{topic}}</option>
+      </select>
+      <small [class.d-none]="!topicError&& topic.untouched">please choose a topic</small>
+   </div>
+   <button class="btn btn-success">Submit</button>
+  </form>
+</div> 
