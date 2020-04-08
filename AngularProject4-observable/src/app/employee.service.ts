@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {EmployeeModel} from './employeeModel'
 
@@ -9,12 +9,20 @@ import {EmployeeModel} from './employeeModel'
 export class EmployeeService {
 empUrl="/api/employeeDetls";
   constructor(private httpclient:HttpClient) { }
-    
+  createEmployee(emp:EmployeeModel):Observable<EmployeeModel>{
+    let httpHeader=new HttpHeaders()
+    .set('Content-Type','application/Json');
+    let option={
+      headers:httpHeader
+    };
+    return this.httpclient.post<EmployeeModel>(this.empUrl,emp,option);
+  }
    getEmpDetailsFromDb():Observable<EmployeeModel[]>{
 
     return this.httpclient.get<EmployeeModel[]>(this.empUrl); 
      }
 
     
-   }
+  }
+
 

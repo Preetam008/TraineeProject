@@ -1,4 +1,6 @@
-<div style="text-align: center;">
+<!-- 
+<h2>angular http get request </h2>
+ <div style="text-align: center;">
     <h2>hello</h2>
 
 
@@ -12,7 +14,7 @@
 
     </li>
 </ul>
-</div> 
+</div>  -->
 <!--using async pipe
  <div style="text-align: center;">
     <h2>hello</h2>
@@ -25,4 +27,35 @@
     </li>
 </ul>
 </div> -->
+<h2>angular http post request</h2>
+<p *ngIf="dataSaved" ngClass="success">Record Insert Successfully</p>
+<form [FormGroup]="empForm" (ngSubmit)="onFormSubmit()">
+<table>
+    <tr>
+        <td>Name:</td>
+        <td><input formControlName="empName"></td>
+    </tr>
+    <tr>
+        <td>Department:</td>
+        <td><input formControlName="dept"></td>
+    </tr>
+    <tr>
+        <td colspan="2">
+        <button [disable]="empForm.invalid">Submit</button>
+        </td>
+    </tr>
+    
+</table>
+    </form>
+    <h2>View</h2>
+    <table>
+        <tr>
+            <td>ID</td><td>Name</td><td>Dept</td>
+            
+            
+        </tr>
+        <tr *ngFor ="let ed of allEmps">
+            <td>{{ed.empId}}</td><td>{{ed.empName}}</td><td>{{ed.dept}}</td>  
+        </tr>
+    </table>
 
